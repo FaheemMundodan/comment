@@ -13,6 +13,15 @@ export default function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (phone.toLowerCase().trim() !== 'admin') {
+      const digitCount = phone.replace(/\D/g, '').length;
+      if (digitCount !== 10) {
+        setError('Phone number is not correct.');
+        return;
+      }
+    }
+
     setLoading(true);
     setError('');
 
@@ -28,7 +37,7 @@ export default function Login() {
       if (!res.ok) {
         if (res.status === 404) {
           setNeedsName(true);
-          setError('Number not found. Please enter your name to sign up.');
+          setError('');
         } else {
           setError(data.error || 'Something went wrong');
         }
@@ -58,7 +67,10 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
           {needsName && (
-            <div className="mb-4">
+            <div className="mb-8" style={{ background: 'var(--surface-color)', border: '1px solid var(--border)', padding: '16px', borderRadius: 'var(--radius-md)' }}>
+              <p className="mb-4" style={{ fontSize: '15px', fontWeight: 500 }}>
+                You are not registered yet. Please enter your name below to register instantly!
+              </p>
               <label className="label">Full Name</label>
               <input
                 type="text"
