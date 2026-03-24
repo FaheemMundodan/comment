@@ -108,8 +108,8 @@ export default function Dashboard() {
                                 href={reelLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-primary"
-                                style={{ textDecoration: 'none', padding: '16px', fontSize: '18px', boxShadow: '0 8px 24px rgba(59, 130, 246, 0.4)' }}
+                                className="btn btn-secondary"
+                                style={{ textDecoration: 'none', padding: '16px', fontSize: '18px' }}
                             >
                                 <ExternalLink size={20} />
                                 Go to Instagram Reel
@@ -121,13 +121,11 @@ export default function Dashboard() {
                                 href={fbLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-primary"
+                                className="btn btn-secondary"
                                 style={{
                                     textDecoration: 'none',
                                     padding: '16px',
-                                    fontSize: '18px',
-                                    background: 'linear-gradient(135deg, #1877F2, #0b5fc9)',
-                                    boxShadow: '0 8px 24px rgba(24, 119, 242, 0.4)'
+                                    fontSize: '18px'
                                 }}
                             >
                                 <ExternalLink size={20} />
